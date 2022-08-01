@@ -1,228 +1,39 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
 
+@import url(../blocks/page/page.css);
+@import url(../blocks/page/__wrap/page__wrap.css);
 
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__line/header__line.css);
 
-.page {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.page__wrap {
-    max-width: 1280px;
-    width: 100%;
-    background-color: #000000;
-}
-.header {
-    max-width: 880px;
-    width: 70%;
-    padding-top: 45px;
-    margin: 0 auto;
-}
-.header__logo {
-    padding-bottom: 41px;
-}
-.header__line {
-    width: 100%;
-    opacity: 0.7;
-    border: 1px solid #545454;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info-wrap/profile__info-wrap.css);
+@import url(../blocks/profile/__text-wrap/profile__text-wrap.css);
+@import url(../blocks/profile/__text-label/profile__text-label.css);
+@import url(../blocks/profile/__text-paragraf/profile__text-paragraf.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 
+@import url(../blocks/elements/elements.css);
 
-.profile {
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    max-width: 880px;
-    width: 70%;
-    padding-top: 35px;
-    padding-bottom: 45px;
-    margin: 0 auto;
-}
-.profile__avatar {
-    width: 128px;
-    border-radius: 50%;
-}
-.profile__info-wrap {
-    display: flex;
-    align-items: baseline;
-    color: #ffffff;
-    padding-left: 30px;
-}
-.profile__text-wrap {
-    padding-right: 18px;
-}
-.profile__text-label {
-    padding-bottom: 16px;
-    margin: 0;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 42px;
-    line-height: 48px;
-}
-.profile__text-paragraf {
-    margin: 0;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-}
-.profile__edit-button {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    background-color: #000000;
-    padding: 0;
-    margin: 0;
-    background-image: url(../images/svg/Edit\ Button.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: 0.7s;
-}
-.profile__edit-button:hover {
-    opacity: 0.6;
-}
-.profile__add-button {
-    width: 150px;
-    height: 50px;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    background-color: #000000;
-    border: 2px solid #FFFFFF;
-    border-radius: 2px;
-    margin-top: 10px;
-    background-image: url(../images/svg/plus_button.svg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-    transition: 0.7s;
-}
-.profile__add-button:hover {
-    opacity: 0.6;
-}
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__group/element__group.css);
+@import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__like/element__like.css);
 
-.elements {
-    max-width: 880px;
-    width: 70%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-    padding-bottom: 67px;
-    gap: 17px 20px;
-}
-.element {
-    max-width: 282px;
-    width: 100%;
-    background: #FFFFFF;
-    border-radius: 10px;
-}
-.element__image {
-    max-width: 282px;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
-.element__group {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 20px 30px;
-}
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
 
-.element__title {
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 29px;
-    margin: 0;
-    padding: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.element__like {
-    cursor: pointer;
-    transition: 0.7s;
-}
-.element__like:hover {
-    opacity: 0.6;
-}
-.footer {
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: #545454;
-    max-width: 880px;
-    width: 70%;
-    margin: 0 auto;
-    padding-bottom: 60px;
-}
-
-
-
-
-
-@media screen and (max-width: 1100px) {
-    .elements {
-        width: 55%;
-        grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
-    }
-    .footer {
-        width: 55%;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .profile__text-label {
-        font-size: 27px;
-        line-height: 33px;
-    }
-    .profile__text-paragraf {
-        font-size: 14px;
-        line-height: 17px;
-    }
-    .profile__text-wrap {
-        padding-right: 10px;
-    }
-    .profile__add-button {
-        width: 282px;
-    }
-    .header {
-        max-width: 100%;
-        width: 100%;
-    }
-    .header__logo {
-        padding-left: 27px;
-    }
-    .profile {
-        display: block;
-        text-align: center;
-        width: auto;
-    }
-    .profile__info-wrap {
-        justify-content: center;
-        padding-left: 0;
-    }
-    .elements {
-        width: 63%;
-    }
-    .footer {
-        width: 63%;
-    }
-}
-
-@media screen and (max-width: 796px) {
-    .elements {
-        width: 282px;
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    }
-    .footer {
-        width: 282px;
-    }
-}
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__close-icon/popup__close-icon.css);
+@import url(../blocks/popup/__box/popup__box.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__label/popup__label.css);
+@import url(../blocks/popup/__input-name/popup__input-name.css);
+@import url(../blocks/popup/__input-aboutme/popup__input-aboutme.css);
+@import url(../blocks/popup/__rectangle/button__rectangle.css);

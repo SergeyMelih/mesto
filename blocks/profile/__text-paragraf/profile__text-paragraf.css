@@ -1,0 +1,14 @@
+.profile__text-paragraf {
+    margin: 0;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@media screen and (max-width: 950px) {
+    .profile__text-paragraf {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

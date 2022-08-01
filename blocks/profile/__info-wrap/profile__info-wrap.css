@@ -1,0 +1,13 @@
+.profile__info-wrap {
+    display: flex;
+    align-items: baseline;
+    color: #ffffff;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 950px) {
+    .profile__info-wrap {
+        justify-content: center;
+        padding-left: 0;
+    }
+}

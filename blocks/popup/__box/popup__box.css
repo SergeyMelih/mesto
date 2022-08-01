@@ -1,0 +1,10 @@
+.popup__box {
+    width: 358px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 796px) {
+    .popup__box {
+        width: 90%;
+    }
+}
