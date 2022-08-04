@@ -10,6 +10,20 @@ let nameInput = popup.querySelector('.popup__input-name');
 let jobInput = popup.querySelector('.popup__input-aboutme');
 let formElement = page.querySelector('.popup__box');
 
+let saveBtn = popup.querySelector('.popup__button-rectangle');
+
+let heardLike = page.querySelector('.element__like');
+
+function likeActiv() {
+    if (heardLike.classList.contains('like_activ') === true) {
+        heardLike.classList.remove('like_activ');
+    } else {
+        heardLike.classList.add('like_activ');
+    }
+}
+
+heardLike.addEventListener('click', likeActiv);
+
 nameInput.value = userName.textContent;
 jobInput.value = userProf.textContent;
 
@@ -23,6 +37,7 @@ function openClosePopup() {
 
 editingBtn.addEventListener('click', openClosePopup);
 closeBtn.addEventListener('click', openClosePopup);
+saveBtn.addEventListener('click', openClosePopup);
 
 
 // Обработчик «отправки» формы, хотя пока
@@ -43,3 +58,4 @@ function formSubmitHandler (evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler); 
+

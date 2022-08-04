@@ -1,5 +1,6 @@
 .profile__text-wrap {
     padding-right: 18px;
+    max-width: 300px;
 }
 
 @media screen and (max-width: 950px) {
