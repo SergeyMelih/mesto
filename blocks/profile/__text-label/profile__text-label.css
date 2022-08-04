@@ -11,5 +11,6 @@
     .profile__text-label {
         font-size: 27px;
         line-height: 33px;
+        padding-bottom: 14px;
     }
 }
