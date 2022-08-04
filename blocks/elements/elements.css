@@ -21,9 +21,11 @@
     }
 }
 
-@media screen and (max-width: 796px) {
+@media screen and (max-width: 810px) {
     .elements {
-        width: 282px;
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: none;
     }
 }
