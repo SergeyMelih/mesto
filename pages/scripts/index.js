@@ -12,17 +12,22 @@ let formElement = page.querySelector('.popup__box');
 
 let saveBtn = popup.querySelector('.popup__button-rectangle');
 
-let heardLike = page.querySelector('.element__like');
+let heardLike = page.querySelectorAll('.element__like');
 
-function likeActiv() {
-    if (heardLike.classList.contains('like_activ') === true) {
-        heardLike.classList.remove('like_activ');
+function likeActiv(i) {
+    if (heardLike[i].classList.contains('like_activ') === true) {
+        heardLike[i].classList.remove('like_activ');
     } else {
-        heardLike.classList.add('like_activ');
+        heardLike[i].classList.add('like_activ');
+    }
+}
+function init(){
+	for (let i = 0; i < heardLike.length; i++) {
+        heardLike[i].addEventListener('click', function(){ likeActiv(i); });
     }
 }
 
-heardLike.addEventListener('click', likeActiv);
+init();
 
 nameInput.value = userName.textContent;
 jobInput.value = userProf.textContent;
