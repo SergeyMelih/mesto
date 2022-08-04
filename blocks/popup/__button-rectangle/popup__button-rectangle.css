@@ -1,4 +1,4 @@
-.button__rectangle {
+.popup__button-rectangle {
     cursor: pointer;
     margin-top: 48px;
     margin-bottom: 37px;
@@ -14,12 +14,12 @@
     line-height: 22px;
     transition: 0.7s;
 }
-.button__rectangle:hover {
+.popup__button-rectangle:hover {
     opacity: 0.8;
 }
 
 @media screen and (max-width: 796px) {
-    .button__rectangle {
+    .popup__button-rectangle {
         width: 100%;
         padding: 14px 0;
         font-size: 14px;
