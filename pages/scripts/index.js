@@ -6,8 +6,7 @@ let editingBtn = page.querySelector('.profile__edit-button');
 let closeBtn = page.querySelector('.popup__close-icon-btn');
 let popup = page.querySelector('.popup');
 
-let nameInput = popup.querySelector('.popup__input-name');
-let jobInput = popup.querySelector('.popup__input-aboutme');
+let popupInput = popup.querySelectorAll('.popup__input');
 let formElement = page.querySelector('.popup__box');
 
 let saveBtn = popup.querySelector('.popup__button-rectangle');
@@ -29,8 +28,8 @@ function init(){
 
 init();
 
-nameInput.value = userName.textContent;
-jobInput.value = userProf.textContent;
+popupInput[0].value = userName.textContent;
+popupInput[1].value = userProf.textContent;
 
 function openClosePopup() {
     if (popup.classList.contains('popup_opened') === true) {
@@ -55,8 +54,8 @@ function formSubmitHandler (evt) {
     // Получите значение полей jobInput и nameInput из свойства value
     
     // Выберите элементы, куда должны быть вставлены значения полей
-    userName.textContent = nameInput.value;
-    userProf.textContent = jobInput.value;
+    userName.textContent = popupInput[0].value;
+    userProf.textContent = popupInput[1].value;
     // Вставьте новые значения с помощью textContent
 }
 
