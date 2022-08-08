@@ -1,6 +1,6 @@
-.like_activ {
+.like_active {
     background-image: url(../../../../images/svg/heart__black.svg);
 }
-.like_activ:hover {
+.like_active:hover {
     opacity: 1;
 }

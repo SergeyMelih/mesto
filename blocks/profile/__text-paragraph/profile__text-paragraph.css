@@ -1,4 +1,4 @@
-.profile__text-paragraf {
+.profile__text-paragraph {
     margin: 0;
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 950px) {
-    .profile__text-paragraf {
+    .profile__text-paragraph {
         font-size: 14px;
         line-height: 17px;
         padding-bottom: 36px;
