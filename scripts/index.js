@@ -33,10 +33,11 @@ let heardLike = page.querySelectorAll('.element__like');
 
 
 
-popupInput[0].value = userName.textContent;
-popupInput[1].value = userProf.textContent;
+
 
 function openClosePopup() {
+    popupInput[0].value = userName.textContent;
+    popupInput[1].value = userProf.textContent;
     if (popup.classList.contains('popup_opened') === true) {
         popup.classList.remove('popup_opened');
     } else {
