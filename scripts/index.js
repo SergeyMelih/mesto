@@ -3,15 +3,45 @@ let profileUser = page.querySelector('.profile');
 let userName = profileUser.querySelector('.profile__text-label');
 let userProf = profileUser.querySelector('.profile__text-paragraph');
 let editingBtn = page.querySelector('.profile__edit-button');
-let closeBtn = page.querySelector('.popup__close-icon');
-let popup = page.querySelector('.popup');
-
-let popupInput = popup.querySelectorAll('.popup__input');
-let formElement = page.querySelector('.popup__form');
-
-let saveBtn = popup.querySelector('.popup__button-save');
+let addBtn = page.querySelector('.profile__add-button');
 
 let heardLike = page.querySelectorAll('.element__like');
+
+let popup = page.querySelector('.popup');
+let closeBtn = page.querySelector('.popup__close-icon');
+let popupInput = popup.querySelectorAll('.popup__input');
+let formElement = page.querySelector('.popup__form');
+let saveBtn = popup.querySelector('.popup__button-save');
+
+let popupPlace = page.querySelector('#popup__place');
+let closeBtnPlace = popupPlace.querySelector('.popup__close-icon');
+
+function openClosePopup() {
+    popupInput[0].value = userName.textContent;
+    popupInput[1].value = userProf.textContent;
+    if (popup.classList.contains('popup_opened') === true) {
+        popup.classList.remove('popup_opened');
+    } else {
+        popup.classList.add('popup_opened');
+    }
+}
+
+editingBtn.addEventListener('click', openClosePopup);
+closeBtn.addEventListener('click', openClosePopup);
+
+function openClosePopupPlace() {
+    // popupInput[0].value = userName.textContent;
+    // popupInput[1].value = userProf.textContent;
+    if (popupPlace.classList.contains('popup_opened') === true) {
+        popupPlace.classList.remove('popup_opened');
+    } else {
+        popupPlace.classList.add('popup_opened');
+    }
+}
+
+addBtn.addEventListener('click', openClosePopupPlace);
+closeBtnPlace.addEventListener('click', openClosePopupPlace);
+
 
 
 // ↓↓↓↓↓ Функция "Лайка", замена с прозрачного на черное ↓↓↓↓
@@ -30,25 +60,6 @@ function init(){
 }
 
 init();
-
-
-
-
-
-function openClosePopup() {
-    popupInput[0].value = userName.textContent;
-    popupInput[1].value = userProf.textContent;
-    if (popup.classList.contains('popup_opened') === true) {
-        popup.classList.remove('popup_opened');
-    } else {
-        popup.classList.add('popup_opened');
-    }
-}
-
-editingBtn.addEventListener('click', openClosePopup);
-closeBtn.addEventListener('click', openClosePopup);
-
-
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет

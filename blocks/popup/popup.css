@@ -1,4 +1,5 @@
 .popup {
+    display: flex;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.75);
     overflow-y: auto;
@@ -8,5 +9,7 @@
     left: 0;
     bottom: 0;
     z-index: 1;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
 }
