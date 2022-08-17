@@ -1,0 +1,16 @@
+.element__trash {
+    background-color: rgba(00,00,00, 0);
+    background-image: url(../../../images/svg/delete.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 0.7s;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    outline: none;
+    border: 0;
+    appearance: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

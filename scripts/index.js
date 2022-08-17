@@ -16,20 +16,20 @@ let heardLike = page.querySelectorAll('.element__like');
 
 // ↓↓↓↓↓ Функция "Лайка", замена с прозрачного на черное ↓↓↓↓
 
-// function likeActive(i) {
-//     if (heardLike[i].classList.contains('like_active') === true) {
-//         heardLike[i].classList.remove('like_active');
-//     } else {
-//         heardLike[i].classList.add('like_active');
-//     }
-// }
-// function init(){
-// 	for (let i = 0; i < heardLike.length; i++) {
-//         heardLike[i].addEventListener('click', function(){ likeActive(i); });
-//     }
-// }
+function likeActive(i) {
+    if (heardLike[i].classList.contains('like_active') === true) {
+        heardLike[i].classList.remove('like_active');
+    } else {
+        heardLike[i].classList.add('like_active');
+    }
+}
+function init(){
+	for (let i = 0; i < heardLike.length; i++) {
+        heardLike[i].addEventListener('click', function(){ likeActive(i); });
+    }
+}
 
-// init();
+init();
 
 
 
