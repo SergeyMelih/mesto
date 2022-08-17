@@ -5,7 +5,7 @@ let userProf = profileUser.querySelector('.profile__text-paragraph');
 let editingBtn = page.querySelector('.profile__edit-button');
 let addBtn = page.querySelector('.profile__add-button');
 
-let heardLike = page.querySelectorAll('.element__like');
+let heardLike = document.querySelectorAll('.element__like');
 
 let popup = page.querySelector('.popup');
 let closeBtn = page.querySelector('.popup__close-icon');
@@ -80,3 +80,122 @@ function formSubmitHandler(evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const initialCards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];  
+
+  const elementsTemplate = document.querySelector('#elements').content;
+  const elementsOnline = document.querySelector('.elements');
+
+  
+  
+  initialCards.forEach(i => {
+    const elementPlace = elementsTemplate.querySelector('.element').cloneNode(true);
+  
+    elementPlace.querySelector('.element__image').src = i.link;
+    elementPlace.querySelector('.element__title').textContent = i.name;
+    elementsOnline.append(elementPlace);
+  })
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
