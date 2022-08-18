@@ -3,18 +3,14 @@ let profileUser = page.querySelector('.profile');
 let userName = profileUser.querySelector('.profile__text-label');
 let userProf = profileUser.querySelector('.profile__text-paragraph');
 let editingBtn = page.querySelector('.profile__edit-button');
-let addBtn = page.querySelector('.profile__add-button');
-
-let heardLike = document.querySelectorAll('.element__like');
-
-let popup = page.querySelector('.popup');
 let closeBtn = page.querySelector('.popup__close-icon');
+let popup = page.querySelector('.popup');
+
 let popupInput = popup.querySelectorAll('.popup__input');
 let formElement = page.querySelector('.popup__form');
+
 let saveBtn = popup.querySelector('.popup__button-save');
 
-let popupPlace = page.querySelector('#popup__place');
-let closeBtnPlace = popupPlace.querySelector('.popup__close-icon');
 
 function openClosePopup() {
     popupInput[0].value = userName.textContent;
@@ -29,37 +25,7 @@ function openClosePopup() {
 editingBtn.addEventListener('click', openClosePopup);
 closeBtn.addEventListener('click', openClosePopup);
 
-function openClosePopupPlace() {
-    // popupInput[0].value = userName.textContent;
-    // popupInput[1].value = userProf.textContent;
-    if (popupPlace.classList.contains('popup_opened') === true) {
-        popupPlace.classList.remove('popup_opened');
-    } else {
-        popupPlace.classList.add('popup_opened');
-    }
-}
 
-addBtn.addEventListener('click', openClosePopupPlace);
-closeBtnPlace.addEventListener('click', openClosePopupPlace);
-
-
-
-// ↓↓↓↓↓ Функция "Лайка", замена с прозрачного на черное ↓↓↓↓
-
-function likeActive(i) {
-    if (heardLike[i].classList.contains('like_active') === true) {
-        heardLike[i].classList.remove('like_active');
-    } else {
-        heardLike[i].classList.add('like_active');
-    }
-}
-function init(){
-	for (let i = 0; i < heardLike.length; i++) {
-        heardLike[i].addEventListener('click', function(){ likeActive(i); });
-    }
-}
-
-init();
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -83,119 +49,64 @@ formElement.addEventListener('submit', formSubmitHandler);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];  
+
+const elementsTemplate = document.querySelector('#elements').content;
+const elementsOnline = document.querySelector('.elements');
+
+
+
+initialCards.forEach(i => {
+  const elementPlace = elementsTemplate.querySelector('.element').cloneNode(true);
+
+  elementPlace.querySelector('.element__image').src = i.link;
+  elementPlace.querySelector('.element__title').textContent = i.name;
+  elementsOnline.append(elementPlace);
+  
+  
+})
+
+let heardLike = page.querySelectorAll('.element__like');
+
+
+// ↓↓↓↓↓ Функция "Лайка", замена с прозрачного на черное ↓↓↓↓
+
+function likeActive(i) {
+    if (heardLike[i].classList.contains('like_active') === true) {
+        heardLike[i].classList.remove('like_active');
+    } else {
+        heardLike[i].classList.add('like_active');
     }
-  ];  
+}
+function init(){
+	for (let i = 0; i < heardLike.length; i++) {
+        heardLike[i].addEventListener('click', function(){ likeActive(i); });
+    }
+}
 
-  const elementsTemplate = document.querySelector('#elements').content;
-  const elementsOnline = document.querySelector('.elements');
-
-  
-  
-  initialCards.forEach(i => {
-    const elementPlace = elementsTemplate.querySelector('.element').cloneNode(true);
-  
-    elementPlace.querySelector('.element__image').src = i.link;
-    elementPlace.querySelector('.element__title').textContent = i.name;
-    elementsOnline.append(elementPlace);
-  })
- 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+init();
