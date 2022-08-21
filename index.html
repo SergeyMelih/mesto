@@ -32,7 +32,7 @@
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
     </div>
-    <div class="popup">
+    <div class="popup" id="popup-user-block">
         <div class="popup__container">
                 <form class="popup__form" name="popup-form">
                     <h2 class="popup__title">Редактировать профиль</h2>
@@ -43,15 +43,22 @@
                 <button class="popup__close-icon" type="button"></button>
         </div>
     </div>
-    <div class="popup popup_cards-block">
+    <div class="popup" id="popup-cards-block"> 
         <div class="popup__container">
-                <form class="popup__form popup__form-cards" name="popup-form">
+                <form class="popup__form" name="popup-form">
                     <h2 class="popup__title">Новое место</h2>
-                    <input type="text" class="popup__input popup__input-cards" name="user-name" placeholder="Название">
-                    <input type="text" class="popup__input popup__input-cards" name="user-aboutme" placeholder="Ссылка на картинку">
-                    <button class="popup__button-save popup__button-save-cards" type="submit">Создать</button>
+                    <input type="text" class="popup__input" name="card-name" placeholder="Название">
+                    <input type="text" class="popup__input" name="card-link" placeholder="Ссылка на картинку">
+                    <button class="popup__button-save" type="submit">Создать</button>
                 </form>
-                <button class="popup__close-icon popup__close-icon-cards" type="button"></button>
+                <button class="popup__close-icon" type="button"></button>
+        </div>
+    </div>
+    <div class="popup popup_card" id="popup-card-info">
+        <div class="popup__container-img">
+          <img class="popup__card-img" src="" alt="фотография">
+          <p class="popup__card-title"></p>
+          <button type="button" class="popup__close-icon"></button>
         </div>
     </div>
     <template id="elements">

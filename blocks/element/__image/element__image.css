@@ -2,10 +2,5 @@
     max-width: 282px;
     width: 100%;
     border-radius: 10px 10px 0 0;
-    height: 30vh;
-}
-@media screen and (max-width: 810px) {
-    .element__image {
-        height: 35vh;
-    }
+    height: 282px;
 }
