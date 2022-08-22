@@ -94,8 +94,7 @@ function init(){
      });
      element.querySelector('.element__trash').addEventListener('click', function(e){
       const cartItem = e.target.closest('.element');
-      const parentNode = cartItem.parentNode;
-      parentNode.removeChild(cartItem);
+      cartItem.remove();
       e.stopPropagation();
     });
 
@@ -128,6 +127,8 @@ function formSubmitHandler(evt) {
     userName.textContent = popupInputUserName.value;
     userProf.textContent = popupInputUserProf.value;
 
+    
+
     closePopup(popupUser);
 }
 
@@ -143,8 +144,6 @@ function formSubmitCard(evt) {
   
   init();
 };
-
-
 
 popupUserForm.addEventListener('submit', formSubmitHandler); 
 popupCardForm.addEventListener('submit', formSubmitCard); 
