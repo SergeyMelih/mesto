@@ -65,39 +65,13 @@ const initialCards = [
 const elementsTemplate = document.querySelector('#template').content;
 const elementsOnline = document.querySelector('.elements');
 
-function init(){
-  
+function init() {
+
   elementsOnline.innerHTML = '';
- 
+
   for (let index = 0; index < initialCards.length; index++) {
-    
-    const element = elementsTemplate.querySelector('.element').cloneNode(true);
 
-    element.addEventListener('click', function(e){
-      const current = e.currentTarget;
-      
-      popupCardInfoTitle.textContent = current.querySelector('.element__title').textContent;
-      popupCardInfoImg.src = current.querySelector('.element__image').src
-
-      openPopup(popupCardInfo);
-    });
-    element.querySelector('.element__title').textContent = initialCards[index].name;
-    element.querySelector('.element__image').src = initialCards[index].link;
-    element.querySelector('.element__like').addEventListener('click', function(e){ 
-        if(e.target.classList.contains('like_active') === true){
-          e.target.classList.remove('like_active');
-        }
-        else{
-          e.target.classList.add('like_active');
-        }
-        e.stopPropagation();
-     });
-     element.querySelector('.element__trash').addEventListener('click', function(e){
-      const cartItem = e.target.closest('.element');
-      cartItem.remove();
-      e.stopPropagation();
-    });
-
+    const element = initCardView(initialCards[index].name, initialCards[index].link)
     elementsOnline.appendChild(element);
   }
 }
@@ -127,23 +101,54 @@ function formSubmitHandler(evt) {
     userName.textContent = popupInputUserName.value;
     userProf.textContent = popupInputUserProf.value;
 
-    
-
     closePopup(popupUser);
 }
 
 function formSubmitCard(evt) {
-  evt.preventDefault(); 
-  const itemCard = {};
-  itemCard.name = popupInputCardTitle.value;
-  itemCard.link = popupInputCardLink.value;
+  evt.preventDefault();
 
-  initialCards.unshift(itemCard);
+  const cardItem = initCardView(popupInputCardTitle.value, popupInputCardLink.value);
+  console.log(cardItem);
+
+  elementsOnline.prepend(cardItem);
+
+  popupInputCardTitle.value = '';
+  popupInputCardLink.value = '';
 
   closePopup(popupCard);
-  
-  init();
 };
+
+function initCardView(title, image) {
+
+  const element = elementsTemplate.querySelector('.element').cloneNode(true);
+
+  element.addEventListener('click', function (e) {
+    const current = e.currentTarget;
+
+    popupCardInfoTitle.textContent = current.querySelector('.element__title').textContent;
+    popupCardInfoImg.src = current.querySelector('.element__image').src
+
+    openPopup(popupCardInfo);
+  });
+  element.querySelector('.element__title').textContent = title;
+  element.querySelector('.element__image').src = image;
+  element.querySelector('.element__like').addEventListener('click', function (e) {
+    if (e.target.classList.contains('like_active') === true) {
+      e.target.classList.remove('like_active');
+    }
+    else {
+      e.target.classList.add('like_active');
+    }
+    e.stopPropagation();
+  });
+  element.querySelector('.element__trash').addEventListener('click', function (e) {
+    const cartItem = e.target.closest('.element');
+    cartItem.remove();
+    e.stopPropagation();
+  });
+
+  return element;
+}
 
 popupUserForm.addEventListener('submit', formSubmitHandler); 
 popupCardForm.addEventListener('submit', formSubmitCard); 
