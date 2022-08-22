@@ -36,32 +36,32 @@
         <div class="popup__container">
                 <form class="popup__form" name="popup-form">
                     <h2 class="popup__title">Редактировать профиль</h2>
-                    <input type="text" class="popup__input" name="user-name" placeholder="Введите Имя">
-                    <input type="text" class="popup__input" name="user-aboutme" placeholder="Введите Вашу профессию">
+                    <input type="text" class="popup__input popup__input_user-name" name="user-name" placeholder="Введите Имя">
+                    <input type="text" class="popup__input popup__input_user-profession" name="user-aboutme" placeholder="Введите Вашу профессию">
                     <button class="popup__button-save" type="submit">Сохранить</button>
                 </form>
-                <button class="popup__close-icon" type="button"></button>
+                <button class="popup__close-icon popup__close-icon_user" type="button"></button>
         </div>
     </div>
     <div class="popup" id="popup-cards-block"> 
         <div class="popup__container">
                 <form class="popup__form" name="popup-form">
                     <h2 class="popup__title">Новое место</h2>
-                    <input type="text" class="popup__input" name="card-name" placeholder="Название">
-                    <input type="text" class="popup__input" name="card-link" placeholder="Ссылка на картинку">
+                    <input type="text" class="popup__input popup__input_card-title" name="card-name" placeholder="Название">
+                    <input type="text" class="popup__input popup__input_card-link" name="card-link" placeholder="Ссылка на картинку">
                     <button class="popup__button-save" type="submit">Создать</button>
                 </form>
-                <button class="popup__close-icon" type="button"></button>
+                <button class="popup__close-icon popup__close-icon_card-add" type="button"></button>
         </div>
     </div>
     <div class="popup popup_card" id="popup-card-info">
         <div class="popup__container-img">
           <img class="popup__card-img" src="#" alt="фотография">
           <p class="popup__card-title"></p>
-          <button type="button" class="popup__close-icon"></button>
+          <button type="button" class="popup__close-icon popup__close-icon_card-info"></button>
         </div>
     </div>
-    <template id="elements">
+    <template id="template">
         <article class="element">
             <img src="#" alt="Картинка" class="element__image">
             <div class="element__group">
